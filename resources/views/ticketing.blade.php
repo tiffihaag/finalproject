@@ -2,7 +2,7 @@
 
 @section('content')
 
-  <h1>Ticketing Area</h1>
+  <h4>Ticketing Area</h4>
 
   <div class="striped responsive-table" 
   <table>

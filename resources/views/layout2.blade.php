@@ -10,16 +10,15 @@
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
 
-    <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="app/css/materialize.min.css"  media="screen,projection"/>
-
-    <!--CSS-->
-    <link type="text/css" rel="stylesheet" href="app/css/ticketingstyle.css">
-
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>  -->
+
+    <!--CSS-->
+    <link href="{{{ asset('/css/style.css') }}}" rel="stylesheet">
 
     <!--Custom Font for Logo-->
     <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
@@ -31,33 +30,80 @@
 
 <body>
 
-<div class="row">
-  <div class="col s2">Tickets</div>
-  <div class="col s2">Knowledge Base</div>
+<nav class="purple" role="navigation">
+  <div class="nav-wrapper container s12 light"><a id="logo-container" href="index.php" class="brand-logo"><img src="img/totally.png" width="80" height="80"><span class="helpdesk" style="vertical-align: top">Helpdesk</span></a> 
+    <ul class="right hide-on-med-and-down" id="login">
+      <li><a href="login" id="mysignin">Logout</a></li>
+    </ul>
+
+    <ul class="right hide-on-med-and-down">
+      <li><a href="knowledgebase">Knowledge Base</a></li>
+    </ul>
+    <ul class="right hide-on-med-and-down">
+      <li><a href="ticketing">Tickets</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+
+<div aside class="chatting">
+  <h4>Chat Area</h4>
+  <form name="form1">
+  Enter Your Chatname: <input type="text" name="uname" style="width: 200px";>
+  <br>
+  Your Message: <br>
+  <textarea name="msg" style="width: 350px; height: 70px"></textarea> 
+  <br>
+  <a href="#" onclick="submitChat()">Send</a><br><br>
+  </form>
 </div>
 
-<div class="row">
-  <div class="col s12 m8 l9">
+  <div id="chatlogs">
+    Loading Chatlogs, Please Wait...
+  </div>
+
+</div>
+
+<script type="text/javascript">
+function submitChat() {
+  if(form1.uname.value == '' || form1.msg.value == '') {
+    alert('ALL FIELDS ARE MANDATORY');
+  }
+
+  form1.uname.readOnly = true;
+  form1.uname.style.border = 'none';
+  var uname = form1.uname.value;
+  var msg = form1.msg.value;
+  var xmlhttp = new XMLHttpRequest();
+
+  xmlhttp.onreadystatechange = function() {
+    if (xmlhttp.readyState==4&&xmlhttp.status==200){
+      document.getElementById('chatlogs').innerHTML = xmlhttp.responseText; 
+    }
+  }
+  xmlhttp.open('GET', '{{{ asset("/ajax/chat.php?uname=") }}}' + uname + '&msg=' + msg, true);
+  xmlhttp.send();
+}
+
+$(document).ready(function(e) {
+  $.ajaxSetup({cache:false});
+  //setInterval(function() { $(#chatlogs).load('logs.blade.php');}, 2000);
+});
+</script>
+
+</div>
+</div>
+
+
+
+<div class="tables row">
+  <div class="col l9">
     @yield('content')
   </div>
-
-  <div class="col s12 m4 l3">
-    <div id="page-wrap">
-
-    <h2>Helpdesk Chat</h2>
-    
-    <p id="name-area"></p>
-    
-    <div id="chat-wrap"><div id="chat-area"></div></div>
-    
-    <form id="send-message-area">
-        <p>Your message: </p>
-        <textarea id="sendie" maxlength = '100'></textarea>
-    </form>
-
 </div>
-  </div>
-</div>
+
+
 
 </body>
 </html>

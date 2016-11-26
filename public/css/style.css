@@ -13,7 +13,7 @@
 body {
 	background-image: url("../img/background.jpg");
 	background-repeat: no-repeat;
-	background-repeat: repeat-x;
+	background-size: 100%;
 	margin-bottom: -180px;
 	padding: 1em;
 }

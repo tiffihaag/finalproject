@@ -6,20 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
+    <!--CSS-->
+    <link type="text/css" rel="stylesheet" href="public/css/style.css">
+
     <!--Materialize-->
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
-
-    <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="app/css/materialize.min.css"  media="screen,projection"/>
-
-    <!--CSS-->
-    <link type="text/css" rel="stylesheet" href="../../public/css/style.css">
 
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+    <!--CSS-->
+    <link href="{{{ asset('/css/style.css') }}}" rel="stylesheet">
 
     <!--Custom Font for Logo-->
     <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
@@ -59,12 +59,12 @@
       @yield('content')
   </div>
 
-  <footer class="page-footer purple">
+  <footer class="purple" role="page-footer">
     <div class="container">
       <div class="row">
         <div class="col l9 s12">
           <h5 class="white-text">Company Bio</h5>
-          <p class="grey-text text-lighten-4">My name is Tiffany Haag, and I am completing the Full Stack Developer certificate program through University of Central Florida.  This is my final project made with HTML, CSS, JavaScript, PHP, Laravel, and MySQL.</p>
+          <p class="white-text">My name is Tiffany Haag, and I am completing the Full Stack Developer certificate program through University of Central Florida.  This is my final project made with HTML, CSS, JavaScript, PHP, Laravel, and MySQL.</p>
 
         </div>
         <div class="col l3 s12">

@@ -3,7 +3,7 @@
 
 @section('content')
   <div class="center">
-    <h1>Login</h1>
+    <h1 class="header center purple-text">Login</h1>
 
     <img src="img/login.png" width="300px" height="300px">
     <form method="post" action="validatelogin">
