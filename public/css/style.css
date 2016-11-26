@@ -86,3 +86,27 @@ h2 {
 	text-align: center;
 }
 
+section {
+	float: left;
+	background-color: white;
+	width: 1150px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-top: 10px;
+	position: absolute;
+}
+
+@media only screen and (max-width: 900px) {
+	section {
+
+	}
+}
+
+aside {
+	float: right;
+	background-color: white;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-top: 10px;
+}
+

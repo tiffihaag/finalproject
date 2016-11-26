@@ -4,31 +4,28 @@
 
   <h4>Ticketing Area</h4>
 
-  <div class="striped responsive-table" 
-  <table>
+  <table class="striped">
     <thead>
       <tr>
-        <th data-field="id">Ticket</th>
+        <th data-field="id">Ticket#</th>
+        <th data-field="user">User</th>
+        <th data-field="problem">Problem</th>
         <th data-field="name">Priority</th>
-        <th data-field="price">User</th>
-        <th data-field="price">Problem</th>
-        <th data-field="price">Assigned To</th>
-        <th data-field="price">Due Date</th>
-        <th data-field="price">Completed</th>
+        <th data-field="assigned">Assigned To</th>
+        <th data-field="due">Due Date</th>
+        <th data-field="completed">Completed</th>
       </tr>
     </thead>
-
-    <tbody> 
-      <tr>
-        <td>001</td>
-        <td>No</td>
-        <td>tiffihaag</td>
-        <td>Can't log in.</td>
-        <td>John</td>
-        <td>11/22/2016</td>
-        <td>No</td>
-      </tr>
-    </tbody>
+      <br>
+      <tbody>
+        <th data-field="id">Ticket#</th>
+        <th data-field="user">User</th>
+        <th data-field="problem">Problem</th>
+        <th data-field="name">Priority</th>
+        <th data-field="assigned">Assigned To</th>
+        <th data-field="due">Due Date</th>
+        <th data-field="completed">Completed</th>
+      </tbody>
   </table>
 
 @endsection

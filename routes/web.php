@@ -30,3 +30,8 @@ Route::get('/login', function () {
 Route::get('/ticketing', function () {
     return view('ticketing');
 });
+
+//this is new to fix chat window
+Route::get('/chatlogs', function () {
+    return view('chatlogs.layout2');
+});
