@@ -5,13 +5,30 @@ use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-$uname = $_REQUEST['uname'];
-$msg = $_REQUEST['msg'];
+class ChatController extends Controller {
 
-class ChatController extends Controller
-{
-	public function index() {
-		$chatbox = DB::select('select * from chatbox where username="$uname"');
-			return view('uname.layout2' . ['uname' => $uname]) . ('msg.layout2' . ['msg' => $msg]);
-	}
+	public function chat() {
+    $uname = $_REQUEST['uname'];
+    $msg = $_REQUEST['msg'];
+    $response = '';
+
+		$chatbox = DB::select('select * from chatbox where uname = ?',$uname); 
+      foreach (mysql_fetch_array($chatbox, MYSQL_ASSOC) as $row) {
+        $response = $response . '<span>' . $row['msg'] . '</span>';
+      }
+
+      // ($row = mysql_fetch_array($chatbox)) {
+      //   $response = $response . '<span>' . $row['msg'] . '</span>';
+      // }
+      return Response::json($response);
+  	}
+
+	public function addMsg(Request $request){
+    $uname = $_REQUEST['uname'];
+    $msg = $_REQUEST['msg'];
+
+    DB::insert('insert into chatbox (uname, msg) values (?, ?)', [$uname, $msg]);
+  }
 }
+
+?>

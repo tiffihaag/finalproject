@@ -5,12 +5,12 @@
 <div class="section no-pad-bot" id="index-banner">
   <div class="container">
     <br><br>
-    <h1 class="header center purple-text">Helpdesk Tools in One App!</h1>
+    <h1 class="header center purple-text h1-front">Helpdesk Tools in One App!</h1>
     <div class="row center">
       <h4 class="col s12 light" id="desc">Asset management tracking, helpdesk ticketing system, purchase approvals, and chat window all in one easy to use application.</h4>
     </div>
     <div class="row center">
-      <a href="login.blade.php" id="download-button" class="btn-large waves-effect waves-light purple">Level Up Your Helpdesk</a>
+      <a href="/login" id="download-button" class="btn-large waves-effect waves-light purple">Level Up Your Helpdesk</a>
     </div>
   </div>
 </div>
@@ -46,6 +46,7 @@
           <p class="point" style="text-align: justify;">Track inventory of all computers, printers, network equipment, and mobile phones, and license renewal dates in one place.</p>
         </div>
       </div>
+      
     </div>
   </div>
 </div>

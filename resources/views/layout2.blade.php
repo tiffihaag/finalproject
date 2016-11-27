@@ -48,13 +48,17 @@
 
   <aside class="chatting">
     <h4>Chat Area</h4>
-    <form name="form1">
+    <form name="form1" action="/chatlogs">
     Enter Your Chatname: <input type="text" name="uname" style="width: 200px";>
+    <input type="hidden" name="_method" value="PUT">
+    <input type="hidden" name="_token" value="{{ csrf_token() }}">
     <br>
+
     Your Message: <br>
     <textarea name="msg" style="width: 350px; height: 70px"></textarea> 
     <br>
-    <a href="#" onclick="submitChat()">Send</a><br><br>
+
+    <div onclick="submitChat()">Send</div><br><br>
     </form>
 
     <span id="chatlogs">
@@ -79,14 +83,46 @@
         document.getElementById('chatlogs').innerHTML = xmlhttp.responseText; 
       }
     }
-    xmlhttp.open('GET', '{{{ asset("/app/http/Controllers/ChatController?uname=") }}}' + uname + '&msg=' + msg, true);
+    xmlhttp.open('GET', "{{URL::asset('/chatlogs')}}" + '?uname=' + uname + '&msg=' + msg, true);
+    console.log("here");
     xmlhttp.send();
+    console.log("2nd here");
+  }
+
+  function getChat() {
+    if(form1.uname.value != '') {
+    console.log("indside");
+    var xmlhttp = new XMLHttpRequest();
+
+    var uname = form1.uname.value;
+    xmlhttp.onreadystatechange = function() {
+      if (xmlhttp.readyState==4&&xmlhttp.status==200){
+        console.log(xmlhttp.responseText);
+        document.getElementById('chatlogs').innerHTML = xmlhttp.responseText; 
+      }
+    }
+    xmlhttp.open('POST', "{{URL::asset('/getChats')}}" + '?uname=' + uname, true);
+    
+    xmlhttp.send();
+
+    // var posting = $.ajax({
+    //   type: "POST",
+    //   url: "{{URL::asset('/getChats')}};",
+    //   data: { uname: uname, _token:'{{ csrf_token() }}' },
+    //   datatype:"json"
+    // });
+
+    // console.log(posting);
+    
+  }
+    //setTimeout(getChat(), 30000);
   }
 
   $(document).ready(function(e) {
     $.ajaxSetup({cache:false});
-    //setInterval(function() { $(#chatlogs).load('logs.blade.php');}, 2000);
+    setInterval(function(){getChat()}, 10000);
   });
+
 </script>
 
 

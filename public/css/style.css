@@ -59,19 +59,15 @@ p {
 	font-size: 18px;
 }
 
-h5 {
-	color: #669999;
+.p2 {
+	color: black;
+	font-size: 20px;
 }
 
 .bigger {
 	font-size: 32px;
 	font-style: bold;
 	color: #669999;
-}
-
-.p2 {
-	color: black;
-	font-size: 20px;
 }
 
 .imgcontainer {
@@ -81,9 +77,43 @@ h5 {
 	margin-bottom: 60px;
 }
 
+.loginButton {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-size: 22px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+h1 {
+	width: 100%;
+}
+
+.h1-front {
+	font-size: 56px;
+	width: 100%;
+}
+
 h2 {
 	font-size: 60px;
 	text-align: center;
+}
+
+h4 {
+	text-align: center;
+}
+
+h5{
+	width: 225px;
+	color: #669999;
+}
+
+.point {
+	width: 225px;
+}
+
+.card {
+	position: center;
 }
 
 section {
@@ -94,6 +124,11 @@ section {
 	padding-right: 10px;
 	margin-top: 10px;
 	position: absolute;
+}
+
+header {
+	width: 700px;
+	position: center;
 }
 
 @media only screen and (max-width: 900px) {
@@ -110,3 +145,40 @@ aside {
 	margin-top: 10px;
 }
 
+ /* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 900px;
+    height: 1200px;
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}

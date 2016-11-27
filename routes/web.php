@@ -32,6 +32,8 @@ Route::get('/ticketing', function () {
 });
 
 //this is new to fix chat window
-Route::get('/chatlogs', function () {
-    return view('chatlogs.layout2');
-});
+//Route::get('/chatlogs', 'ChatController@chat');
+
+Route::get('/chatlogs', 'ChatController@addMsg');
+
+Route::post('/getChats', 'ChatController@chat');

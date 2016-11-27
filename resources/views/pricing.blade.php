@@ -10,7 +10,7 @@
       <h4>It's free!  Yes, you heard right.</h4><br><h4>I intend to make this completely open source.  I think if I can get my name out there, and people like the product, they can come to me for add-ons (or offer me a nice part-time job).</h4>
     </div>
     <div class="row center">
-      <a href="login.php" id="download-button" class="btn-large waves-effect waves-light purple">Create a Free Login</a>
+      <a href="/login" id="download-button" class="btn-large waves-effect waves-light purple">Create a Free Login</a>
     </div>
   </div>
   <div class="chuck center"> <img src="img/chuck.jpg"></div>
