@@ -9,18 +9,21 @@ class ChatController extends Controller {
 
 	public function chat() {
     $uname = $_REQUEST['uname'];
-    $msg = $_REQUEST['msg'];
-    $response = '';
+    //$msg = $_REQUEST['msg'];
+    $results = 'hello';
 
-		$chatbox = DB::select('select * from chatbox where uname = ?',$uname); 
-      foreach (mysql_fetch_array($chatbox, MYSQL_ASSOC) as $row) {
-        $response = $response . '<span>' . $row['msg'] . '</span>';
-      }
+
+    //$results = DB::select('select * from users where id = :id', ['id' => 1]);
+		
+    // $chatbox = DB::select('select * from chatbox where uname = ?',$uname); 
+    //   foreach (mysql_fetch_array($chatbox, MYSQL_ASSOC) as $row) {
+    //     $results = $results . '<span>' . $row['msg'] . '</span>';
+    //   }
 
       // ($row = mysql_fetch_array($chatbox)) {
       //   $response = $response . '<span>' . $row['msg'] . '</span>';
       // }
-      return Response::json($response);
+      return Response::json($results);
   	}
 
 	public function addMsg(Request $request){

@@ -92,18 +92,20 @@
   function getChat() {
     if(form1.uname.value != '') {
     console.log("indside");
-    var xmlhttp = new XMLHttpRequest();
+    var xmlhttp1 = new XMLHttpRequest();
 
     var uname = form1.uname.value;
-    xmlhttp.onreadystatechange = function() {
-      if (xmlhttp.readyState==4&&xmlhttp.status==200){
-        console.log(xmlhttp.responseText);
-        document.getElementById('chatlogs').innerHTML = xmlhttp.responseText; 
+    xmlhttp1.onreadystatechange = function() {
+      console.log(xmlhttp1);
+
+      if (xmlhttp1.readyState==4&&xmlhttp1.status==200){
+        console.log(xmlhttp1);
+        document.getElementById('chatlogs').innerHTML = xmlhttp1.responseText; 
       }
     }
-    xmlhttp.open('POST', "{{URL::asset('/getChats')}}" + '?uname=' + uname, true);
+    xmlhttp1.open('GET', "{{URL::asset('/getChats')}}" + '?uname=' + uname + '&_token={{ csrf_token() }}', true);
     
-    xmlhttp.send();
+    xmlhttp1.send();
 
     // var posting = $.ajax({
     //   type: "POST",

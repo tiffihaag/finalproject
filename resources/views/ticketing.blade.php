@@ -46,7 +46,7 @@
       <div class="input-field col s9">
         <div class="input-field col s3">
           <input id="completed" type="radio" class="validate">
-          <label for="completed" data-error="wrong" data-success="right">Completed?</label>
+          <label for="completed" data-error="wrong" data-success="right">Done?</label>
         </div>  
 
         <div class="input-field col s6">
@@ -105,13 +105,13 @@
     </thead>
       <br>
       <tbody>
-        <th data-field="id">Ticket#</th>
-        <th data-field="user">User</th>
-        <th data-field="problem">Problem</th>
-        <th data-field="name">Priority</th>
-        <th data-field="assigned">Assigned To</th>
-        <th data-field="due">Due Date</th>
-        <th data-field="completed">Completed</th>
+        <th data-field="id">001</th>
+        <th data-field="user">tiffihaag</th>
+        <th data-field="problem">Can't log in.</th>
+        <th data-field="name">no</th>
+        <th data-field="assigned">John</th>
+        <th data-field="due">11/28/2016</th>
+        <th data-field="completed">no</th>
       </tbody>
   </table>
 

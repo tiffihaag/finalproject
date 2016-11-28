@@ -2,9 +2,9 @@
 
 @section('content')
 
-  <h1>Knowledge Base</h1>
+  <h4>Knowledge Base</h4>
 
-  <div class="striped responsive-table" 
+  <div class="striped"> 
   <table>
 
   <thead> <!--Will come from mysql once configured -->
@@ -18,5 +18,8 @@
       <th data-field="price">Completed</th>
 	  </tr>
 	</thead>
+
+  </table>
+  </div>
 
 @endsection
